@@ -4,7 +4,33 @@
     <%- include('./includes/navbar') %>
     <div class="row">
         <div class="col"></div>
-        <div class="col"></div>
+        <div class="col-8">
+            <form class="py-3" method="POST" action="/addBooks">
+
+                <div class="mb-3">
+                    <label for="Book Name">Book Name</label>
+                    <div class="input-group">                        
+                        <input type="text" class="form-control" name="bookName" placeholder="Book Name"  >
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="authorName">Author Name</label>
+                        <input type="text" class="form-control" name="authorName" placeholder="Auther Name" value=""  >
+                        
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="isbn">ISBN</label>
+                        <input type="number" class="form-control" name="isbn" placeholder="" value=""  >                        
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-outline-primary btn-lg btn-block" type="submit">Submit</button>
+            </form>
+
+        </div>
         <div class="col"></div>
     </div>
 </div>
