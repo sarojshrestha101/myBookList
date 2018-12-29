@@ -13,6 +13,9 @@ app.set('views');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// importing mongoClient
+const mongoConnect = require('./util/database').mongoConnect;
+
 //importing routes
 const publicRoutes = require('./routes/public_routes');
 
@@ -28,5 +31,7 @@ app.use(
         );
     }
 );
+mongoConnect(()=>{    
+    app.listen(4000);
+})
 
-app.listen(4000);
